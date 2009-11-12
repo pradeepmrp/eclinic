@@ -1,0 +1,798 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fswiss\fcharset238{\*\fname Arial;}Arial CE;}{\f2\fswiss\fcharset163 Arial;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\f0\fs20 -- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- http://www.phpmyadmin.net\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Nov 08, 2009 at 03:34 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `eclinic`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `bacsi_phongkham`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `bacsi_phongkham` (\par
+  `MaBS` int(11) NOT NULL,\par
+  `MaPhongKham` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaBS`),\par
+  KEY `bacsi_phongkham_ibfk_2` (`MaPhongKham`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `bacsi_phongkham`\par
+--\par
+\par
+INSERT INTO `bacsi_phongkham` (`MaBS`, `MaPhongKham`) VALUES\par
+(1, 1);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `benhnhan`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `benhnhan` (\par
+  `MaBN` int(11) NOT NULL AUTO_INCREMENT,\par
+  `HoTen` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `NgaySinh` date NOT NULL,\par
+  `DiaChi` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `SoCMND` varchar(10) COLLATE utf8_unicode_ci NOT NULL,\par
+  `SoDienThoai` varchar(15) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaTK` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaBN`),\par
+  KEY `benhnhan_ibfk_1` (`MaTK`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;\par
+\par
+--\par
+-- Dumping data for table `benhnhan`\par
+--\par
+\par
+INSERT INTO `benhnhan` (`MaBN`, `HoTen`, `NgaySinh`, `DiaChi`, `SoCMND`, `SoDienThoai`, `MaTK`) VALUES\par
+(1, 'Cao Thanh Th\'fay', '1986-11-16', '2 \f1\'d0\u7873? Th\'e1m Q1', '845698246', '0938456321', 3),\par
+(2, 'Nguy\u7877?n Ph\u432?\u417?ng Dung', '1989-11-01', '2 \'d0\u7873? Th\'e1m Q1', '456982130', '0948145632', 4);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `cachsd`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `cachsd` (\par
+  `MaCachSD` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenCachSD` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaCachSD`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `cachsd`\par
+--\par
+\par
+INSERT INTO `cachsd` (`MaCachSD`, `TenCachSD`) VALUES\par
+(1, 'U\u7889?ng'),\par
+(2, 'Ti\f0\'eam'),\par
+(3, 'B\'f4i');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `chitiettoathuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `chitiettoathuoc` (\par
+  `MaCTTT` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaToaThuoc` int(11) NOT NULL,\par
+  `MaThuoc` int(11) NOT NULL,\par
+  `Sang` int(11) NOT NULL,\par
+  `Trua` int(11) NOT NULL,\par
+  `Chieu` int(11) NOT NULL,\par
+  `SoLuong` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaCTTT`),\par
+  KEY `chitiettoathuoc_ibfk_1` (`MaToaThuoc`),\par
+  KEY `chitiettoathuoc_ibfk_2` (`MaThuoc`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `chitiettoathuoc`\par
+--\par
+\par
+INSERT INTO `chitiettoathuoc` (`MaCTTT`, `MaToaThuoc`, `MaThuoc`, `Sang`, `Trua`, `Chieu`, `SoLuong`) VALUES\par
+(1, 1, 1, 1, 0, 1, 14),\par
+(2, 1, 2, 1, 1, 1, 21),\par
+(3, 1, 3, 1, 1, 1, 21);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `chuyenmon`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `chuyenmon` (\par
+  `MaCM` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenCM` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaCM`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;\par
+\par
+--\par
+-- Dumping data for table `chuyenmon`\par
+--\par
+\par
+INSERT INTO `chuyenmon` (`MaCM`, `TenCM`) VALUES\par
+(1, 'N\u7897?i th\u7847?n kinh'),\par
+(2, 'Tim m\u7841?ch'),\par
+(3, 'Chuy\'ean khoa m\u7855?t'),\par
+(4, 'Chuy\'ean khoa gan'),\par
+(5, 'Ch\f2\'fda bi\u7871?t');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `khoa`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `khoa` (\par
+  `MaKhoa` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenKhoa` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaKhoa`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `khoa`\par
+--\par
+\par
+INSERT INTO `khoa` (`MaKhoa`, `TenKhoa`) VALUES\par
+(1, 'Tim m\u7841?ch'),\par
+(2, 'Gan'),\par
+(3, 'B\u7879?nh truy\u7873?n nhi\u7877?m');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `khothuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `khothuoc` (\par
+  `MaKho` int(11) NOT NULL,\par
+  `MaPhong` int(11) NOT NULL,\par
+  `MaThuoc` int(11) NOT NULL,\par
+  `SoLuong` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaKho`,`MaPhong`,`MaThuoc`),\par
+  KEY `khothuoc_ibfk_1` (`MaPhong`),\par
+  KEY `khothuoc_ibfk_2` (`MaThuoc`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `khothuoc`\par
+--\par
+\par
+INSERT INTO `khothuoc` (`MaKho`, `MaPhong`, `MaThuoc`, `SoLuong`) VALUES\par
+(1, 1, 1, 5000),\par
+(1, 1, 2, 5000),\par
+(1, 1, 3, 5000),\par
+(1, 2, 1, 5000),\par
+(1, 2, 2, 5000);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `lichhenkcb`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `lichhenkcb` (\par
+  `MaBN` int(11) NOT NULL,\par
+  `NgayHenKham` date NOT NULL,\par
+  `PhongKham` int(11) NOT NULL,\par
+  `GioKham` varchar(35) COLLATE utf8_unicode_ci NOT NULL,\par
+  `GhiChu` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaBN`,`NgayHenKham`),\par
+  KEY `lichhenkcb_ibfk_2` (`PhongKham`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `lichhenkcb`\par
+--\par
+\par
+INSERT INTO `lichhenkcb` (`MaBN`, `NgayHenKham`, `PhongKham`, `GioKham`, `GhiChu`) VALUES\par
+(2, '2009-11-25', 2, '7 gi\u7901? 30', 'Nh\u7899? \'f0i \'f0\'fang gi\u7901?');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `lichkham`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `lichkham` (\par
+  `MaSoKCB` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaBN` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaSoKCB`),\par
+  KEY `lichkham_ibfk_1` (`MaBN`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;\par
+\par
+--\par
+-- Dumping data for table `lichkham`\par
+--\par
+\par
+INSERT INTO `lichkham` (`MaSoKCB`, `MaBN`) VALUES\par
+(2, 1),\par
+(1, 2);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `loaibenh`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `loaibenh` (\par
+  `MaLoaiBenh` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenLoaiBenh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaLoaiBenh`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `loaibenh`\par
+--\par
+\par
+INSERT INTO `loaibenh` (`MaLoaiBenh`, `TenLoaiBenh`) VALUES\par
+(1, 'S\u7889?t si\'eau vi'),\par
+(2, 'R\u7889?i lo\u7841?n \'f0\'fd\u7901?ng ti\'eau h\'f3a'),\par
+(3, 'Vi\'eam gan si\'eau vi B');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `loainhanvien`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `loainhanvien` (\par
+  `MaLoaiNV` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenLoaiNV` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaLoaiNV`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;\par
+\par
+--\par
+-- Dumping data for table `loainhanvien`\par
+--\par
+\par
+INSERT INTO `loainhanvien` (`MaLoaiNV`, `TenLoaiNV`) VALUES\par
+(1, 'Gi\'e1m \'f0\u7889?c'),\par
+(2, 'B\'e1c s\u297?'),\par
+(3, 'Nh\'e2n vi\'ean ti\u7871?p nh\u7853?n'),\par
+(4, 'Nh\'e2n vi\'ean thanh to\'e1n'),\par
+(5, 'Nh\'e2n vi\'ean ph\'e1t thu\u7889?c');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `loaiphongphatthuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `loaiphongphatthuoc` (\par
+  `MaLoaiPhong` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenLoaiPhong` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaLoaiPhong`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;\par
+\par
+--\par
+-- Dumping data for table `loaiphongphatthuoc`\par
+--\par
+\par
+INSERT INTO `loaiphongphatthuoc` (`MaLoaiPhong`, `TenLoaiPhong`) VALUES\par
+(1, 'Ph\f0\'f2ng ph\'e1t thu\u7889?c \f1\'f0\u7863?c bi\u7879?t'),\par
+(2, 'Ph\f0\'f2ng ph\'e1t thu\u7889?c th\'f4ng th\f2\'fd\u7901?ng'),\par
+(3, 'Ph\f0\'f2ng ph\'e1t thu\u7889?c theo y\'eau c\u7847?u'),\par
+(4, 'Ph\'f2ng ph\'e1t thu\u7889?c \f1\'f0\u7863?c tr\u7883?');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `loaithuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `loaithuoc` (\par
+  `MaLoaiThuoc` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenLoaiThuoc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaLoaiThuoc`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;\par
+\par
+--\par
+-- Dumping data for table `loaithuoc`\par
+--\par
+\par
+INSERT INTO `loaithuoc` (`MaLoaiThuoc`, `TenLoaiThuoc`) VALUES\par
+(1, 'B\u7891?i d\u432?\u7905?ng th\u7847?n kinh'),\par
+(2, '\'d0i\u7873?u tr\u7883? vi\f0\'eam gan');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `nhanvien`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `nhanvien` (\par
+  `MaNV` int(11) NOT NULL AUTO_INCREMENT,\par
+  `HoTen` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `NgaySinh` date NOT NULL,\par
+  `DiaChi` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `DienThoai` varchar(15) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaTK` int(11) NOT NULL,\par
+  `MaLoaiNV` int(11) NOT NULL,\par
+  `MaCM` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaNV`),\par
+  KEY `nhanvien_ibfk_1` (`MaTK`),\par
+  KEY `nhanvien_ibfk_2` (`MaLoaiNV`),\par
+  KEY `nhanvien_ibfk_3` (`MaCM`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;\par
+\par
+--\par
+-- Dumping data for table `nhanvien`\par
+--\par
+\par
+INSERT INTO `nhanvien` (`MaNV`, `HoTen`, `NgaySinh`, `DiaChi`, `DienThoai`, `MaTK`, `MaLoaiNV`, `MaCM`) VALUES\par
+(1, 'Ph\u7841?m Nguy\u7877?n Th\'e0nh Th\'e1i', '1985-08-08', '91 Nguy\u7877?n Ch\'ed Thanh Q5', '0987123456', 2, 2, 1),\par
+(2, 'L\'ea Ho\'e0ng Y\u7871?n', '1982-12-08', '77 Nguy\u7877?n Kim Q10', '0123589654', 5, 5, 5),\par
+(3, 'L\'ea Ho\'e0ng Kh\u7903?i', '0000-00-00', '135 Tr\u7847?n H\f2\'fdng \'d0\u7841?o Q1', '0958319321', 1, 1, 1),\par
+(4, 'Nguy\u7877?n Th\'f9y D\'fd\'f5ng', '1946-01-08', '6A Ng\'f4 T\u7845?t T\u7889? B\f0\'ecnh Th\u7841?nh', '0909563214', 7, 3, 5),\par
+(5, 'L\'ea Anh Minh', '1972-12-03', '12C Phan V\f1\'e3n Tr\u7883? G\f0\'f2 V\u7845?p', '0917845621', 8, 4, 5);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phieukcb`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phieukcb` (\par
+  `MaPhieuKCB` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaBN` int(11) NOT NULL,\par
+  `NgayKham` date NOT NULL,\par
+  `TrieuChung` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `Mach` varchar(15) COLLATE utf8_unicode_ci NOT NULL,\par
+  `HuyetAp` varchar(15) COLLATE utf8_unicode_ci NOT NULL,\par
+  `ChuanDoan` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaBS` int(11) NOT NULL,\par
+  `KetQuaKham` int(11) NOT NULL,\par
+  `DoUuTien` int(11) NOT NULL,\par
+  `MaTrangThai` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaPhieuKCB`),\par
+  KEY `phieukcb_ibfk_2` (`MaBS`),\par
+  KEY `phieukcb_ibfk_3` (`KetQuaKham`),\par
+  KEY `phieukcb_ibfk_4` (`MaBN`),\par
+  KEY `phieukcb_ibfk_5` (`MaTrangThai`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;\par
+\par
+--\par
+-- Dumping data for table `phieukcb`\par
+--\par
+\par
+INSERT INTO `phieukcb` (`MaPhieuKCB`, `MaBN`, `NgayKham`, `TrieuChung`, `Mach`, `HuyetAp`, `ChuanDoan`, `MaBS`, `KetQuaKham`, `DoUuTien`, `MaTrangThai`) VALUES\par
+(1, 2, '2009-11-08', 'N\'f3ng s\u7889?t', '60 l\u7847?n/ph\'fat', '110/60mmHg', 'S\u7889?t si\'eau vi', 1, 2, 1, 2);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phieunhapkho`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phieunhapkho` (\par
+  `MaPhieuNhap` int(11) NOT NULL,\par
+  `MaKho` int(11) NOT NULL,\par
+  `MaThuoc` int(11) NOT NULL,\par
+  `SoLuongNhap` int(11) NOT NULL,\par
+  `NgayNhap` date NOT NULL,\par
+  PRIMARY KEY (`MaPhieuNhap`,`MaKho`,`MaThuoc`),\par
+  KEY `phieunhapkho_ibfk_1` (`MaKho`),\par
+  KEY `phieunhapkho_ibfk_2` (`MaThuoc`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `phieunhapkho`\par
+--\par
+\par
+INSERT INTO `phieunhapkho` (`MaPhieuNhap`, `MaKho`, `MaThuoc`, `SoLuongNhap`, `NgayNhap`) VALUES\par
+(1, 1, 1, 10000, '2009-11-08'),\par
+(1, 1, 2, 10000, '2009-11-08');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phieuthanhtoan`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phieuthanhtoan` (\par
+  `MaPTT` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaToaThuoc` int(11) NOT NULL,\par
+  `SoTienThu` float NOT NULL,\par
+  `TrangThai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaPTT`),\par
+  KEY `phieuthanhtoan_ibfk_1` (`MaToaThuoc`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;\par
+\par
+--\par
+-- Dumping data for table `phieuthanhtoan`\par
+--\par
+\par
+INSERT INTO `phieuthanhtoan` (`MaPTT`, `MaToaThuoc`, `SoTienThu`, `TrangThai`) VALUES\par
+(1, 1, 63000, '\f1\'d0\f0\'e3 thanh to\'e1n');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phieuyeucau`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phieuyeucau` (\par
+  `MaPhieuYC` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaBN` int(11) NOT NULL,\par
+  `TinhHinhBenh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MoTa` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaBS` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaPhieuYC`),\par
+  KEY `phieuyeucau_ibfk_1` (`MaBN`),\par
+  KEY `phieuyeucau_ibfk_2` (`MaBS`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;\par
+\par
+--\par
+-- Dumping data for table `phieuyeucau`\par
+--\par
+\par
+INSERT INTO `phieuyeucau` (`MaPhieuYC`, `MaBN`, `TinhHinhBenh`, `MoTa`, `MaBS`) VALUES\par
+(1, 2, 'Nh\u7913?c \f1\'f0\u7847?u', 'Nh\u7913?c n\u7919?a b\f0\'ean \f1\'f0\u7847?u v\f0\'e0o bu\u7893?i s\'e1ng', 1);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phongkham`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phongkham` (\par
+  `MaPhong` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenPhong` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaKhoa` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaPhong`),\par
+  KEY `phongkham_ibfk_1` (`MaKhoa`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `phongkham`\par
+--\par
+\par
+INSERT INTO `phongkham` (`MaPhong`, `TenPhong`, `MaKhoa`) VALUES\par
+(1, 'Ph\'f2ng kh\'e1m gan', 2),\par
+(2, 'Ph\'f2ng kh\'e1m tim', 1),\par
+(3, 'Ph\'f2ng kh\'e1m b\u7879?nh nhi\u7879?t \f1\'f0\u7899?i', 3);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phongphatthuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phongphatthuoc` (\par
+  `MaPhong` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenPhong` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaLoaiPhong` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaPhong`),\par
+  KEY `phongphatthuoc_ibfk_1` (`MaLoaiPhong`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;\par
+\par
+--\par
+-- Dumping data for table `phongphatthuoc`\par
+--\par
+\par
+INSERT INTO `phongphatthuoc` (`MaPhong`, `TenPhong`, `MaLoaiPhong`) VALUES\par
+(1, 'Ph\f0\'f2ng ph\'e1t thu\u7889?c s\u7889? 1', 1),\par
+(2, 'Ph\'f2ng ph\'e1t thu\u7889?c s\u7889? 2', 2),\par
+(3, 'Ph\'f2ng ph\'e1t thu\u7889?c s\u7889? 3', 4),\par
+(4, 'Ph\'f2ng ph\'e1t thu\u7889?c s\u7889? 4', 3);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `phongphatthuoc_benh`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `phongphatthuoc_benh` (\par
+  `MaPhong` int(11) NOT NULL,\par
+  `MaLoaiBenh` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaPhong`,`MaLoaiBenh`),\par
+  KEY `phongphatthuoc_benh_ibfk_2` (`MaLoaiBenh`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `phongphatthuoc_benh`\par
+--\par
+\par
+INSERT INTO `phongphatthuoc_benh` (`MaPhong`, `MaLoaiBenh`) VALUES\par
+(1, 1),\par
+(4, 1),\par
+(3, 2),\par
+(1, 3),\par
+(2, 3),\par
+(4, 3);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `quyen`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `quyen` (\par
+  `MaQuyen` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenQuyen` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaQuyen`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;\par
+\par
+--\par
+-- Dumping data for table `quyen`\par
+--\par
+\par
+INSERT INTO `quyen` (`MaQuyen`, `TenQuyen`) VALUES\par
+(1, 'Qu\u7843?n tr\u7883? h\u7879? th\u7889?ng'),\par
+(2, 'Nh\'e2n vi\'ean ti\u7871?p nh\u7853?n'),\par
+(3, 'Nh\'e2n vi\'ean thanh to\'e1n'),\par
+(4, 'Nh\'e2n vi\'ean ph\'e1t thu\u7889?c'),\par
+(5, 'B\'e1c s\u297?'),\par
+(6, 'B\u7879?nh nh\'e2n');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `taikhoan`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `taikhoan` (\par
+  `MaTK` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenDN` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MatKhau` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `MaQuyen` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaTK`),\par
+  KEY `taikhoan_ibfk_1` (`MaQuyen`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;\par
+\par
+--\par
+-- Dumping data for table `taikhoan`\par
+--\par
+\par
+INSERT INTO `taikhoan` (`MaTK`, `TenDN`, `MatKhau`, `MaQuyen`) VALUES\par
+(1, 'gdoc', '123', 1),\par
+(2, 'bs1', '111', 5),\par
+(3, 'bn1', '111', 6),\par
+(4, 'bn2', '222', 6),\par
+(5, 'ppt1', '111', 4),\par
+(6, 'ppt2', '222', 4),\par
+(7, 'ppt3', '333', 4),\par
+(8, 'ppt4', '444', 4),\par
+(9, 'tn1', '111', 2),\par
+(10, 'tn2', '222', 2),\par
+(11, 'ptt', '111', 3);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `taikhoan_phongphatthuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `taikhoan_phongphatthuoc` (\par
+  `MaTK` int(11) NOT NULL,\par
+  `MaPhong` int(11) NOT NULL,\par
+  PRIMARY KEY (`MaTK`,`MaPhong`),\par
+  KEY `taikhoan_phongphatthuoc_ibfk_2` (`MaPhong`)\par
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;\par
+\par
+--\par
+-- Dumping data for table `taikhoan_phongphatthuoc`\par
+--\par
+\par
+INSERT INTO `taikhoan_phongphatthuoc` (`MaTK`, `MaPhong`) VALUES\par
+(5, 1),\par
+(6, 2),\par
+(8, 3),\par
+(7, 4);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `thuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `thuoc` (\par
+  `MaThuoc` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenThuoc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  `NgaySX` date NOT NULL,\par
+  `NgayHetHan` date NOT NULL,\par
+  `MaCachSD` int(11) NOT NULL,\par
+  `MaLoaiThuoc` int(11) NOT NULL,\par
+  `Gia` float NOT NULL,\par
+  PRIMARY KEY (`MaThuoc`),\par
+  KEY `thuoc_ibfk_1` (`MaCachSD`),\par
+  KEY `thuoc_ibfk_2` (`MaLoaiThuoc`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;\par
+\par
+--\par
+-- Dumping data for table `thuoc`\par
+--\par
+\par
+INSERT INTO `thuoc` (`MaThuoc`, `TenThuoc`, `NgaySX`, `NgayHetHan`, `MaCachSD`, `MaLoaiThuoc`, `Gia`) VALUES\par
+(1, 'Ambroxol 300mg', '2008-11-08', '2013-11-08', 1, 1, 2500),\par
+(2, 'Dibulaxan', '2008-12-18', '2013-12-18', 1, 1, 1500),\par
+(3, 'Qanazin 5mg', '2008-12-18', '2015-12-18', 1, 2, 2700);\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `toathuoc`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `toathuoc` (\par
+  `MaToaThuoc` int(11) NOT NULL AUTO_INCREMENT,\par
+  `MaPhieuKCB` int(11) NOT NULL,\par
+  `NgayLap` date NOT NULL,\par
+  `LoiDanCuaBS` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaToaThuoc`),\par
+  KEY `toathuoc_ibfk_1` (`MaPhieuKCB`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;\par
+\par
+--\par
+-- Dumping data for table `toathuoc`\par
+--\par
+\par
+INSERT INTO `toathuoc` (`MaToaThuoc`, `MaPhieuKCB`, `NgayLap`, `LoiDanCuaBS`) VALUES\par
+(1, 1, '2009-11-08', 'Nh\u7899? u\u7889?ng thu\u7889?c \f1\'f0\'fang li\u7873?u v\f0\'e0 \f1\'f0\u7847?y \'f0\u7911?');\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `trangthai`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `trangthai` (\par
+  `MaTT` int(11) NOT NULL AUTO_INCREMENT,\par
+  `TenTT` varchar(50) COLLATE utf8_unicode_ci NOT NULL,\par
+  PRIMARY KEY (`MaTT`)\par
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;\par
+\par
+--\par
+-- Dumping data for table `trangthai`\par
+--\par
+\par
+INSERT INTO `trangthai` (`MaTT`, `TenTT`) VALUES\par
+(1, '\'d0ang ch\u7901?'),\par
+(2, '\'d0\f0\'e3 kh\'e1m'),\par
+(3, 'Ch\f2\'fda thanh to\'e1n'),\par
+(4, '\'d0\f0\'e3 thanh to\'e1n');\par
+\par
+--\par
+-- Constraints for dumped tables\par
+--\par
+\par
+--\par
+-- Constraints for table `bacsi_phongkham`\par
+--\par
+ALTER TABLE `bacsi_phongkham`\par
+  ADD CONSTRAINT `bacsi_phongkham_ibfk_1` FOREIGN KEY (`MaBS`) REFERENCES `nhanvien` (`MaNV`),\par
+  ADD CONSTRAINT `bacsi_phongkham_ibfk_2` FOREIGN KEY (`MaPhongKham`) REFERENCES `phongkham` (`MaPhong`);\par
+\par
+--\par
+-- Constraints for table `benhnhan`\par
+--\par
+ALTER TABLE `benhnhan`\par
+  ADD CONSTRAINT `benhnhan_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`);\par
+\par
+--\par
+-- Constraints for table `chitiettoathuoc`\par
+--\par
+ALTER TABLE `chitiettoathuoc`\par
+  ADD CONSTRAINT `chitiettoathuoc_ibfk_2` FOREIGN KEY (`MaThuoc`) REFERENCES `thuoc` (`MaThuoc`),\par
+  ADD CONSTRAINT `chitiettoathuoc_ibfk_1` FOREIGN KEY (`MaToaThuoc`) REFERENCES `toathuoc` (`MaToaThuoc`);\par
+\par
+--\par
+-- Constraints for table `khothuoc`\par
+--\par
+ALTER TABLE `khothuoc`\par
+  ADD CONSTRAINT `khothuoc_ibfk_1` FOREIGN KEY (`MaPhong`) REFERENCES `phongphatthuoc` (`MaPhong`),\par
+  ADD CONSTRAINT `khothuoc_ibfk_2` FOREIGN KEY (`MaThuoc`) REFERENCES `thuoc` (`MaThuoc`);\par
+\par
+--\par
+-- Constraints for table `lichhenkcb`\par
+--\par
+ALTER TABLE `lichhenkcb`\par
+  ADD CONSTRAINT `lichhenkcb_ibfk_2` FOREIGN KEY (`PhongKham`) REFERENCES `phongkham` (`MaPhong`),\par
+  ADD CONSTRAINT `lichhenkcb_ibfk_1` FOREIGN KEY (`MaBN`) REFERENCES `benhnhan` (`MaBN`);\par
+\par
+--\par
+-- Constraints for table `lichkham`\par
+--\par
+ALTER TABLE `lichkham`\par
+  ADD CONSTRAINT `lichkham_ibfk_1` FOREIGN KEY (`MaBN`) REFERENCES `benhnhan` (`MaBN`);\par
+\par
+--\par
+-- Constraints for table `nhanvien`\par
+--\par
+ALTER TABLE `nhanvien`\par
+  ADD CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`),\par
+  ADD CONSTRAINT `nhanvien_ibfk_2` FOREIGN KEY (`MaLoaiNV`) REFERENCES `loainhanvien` (`MaLoaiNV`),\par
+  ADD CONSTRAINT `nhanvien_ibfk_3` FOREIGN KEY (`MaCM`) REFERENCES `chuyenmon` (`MaCM`);\par
+\par
+--\par
+-- Constraints for table `phieukcb`\par
+--\par
+ALTER TABLE `phieukcb`\par
+  ADD CONSTRAINT `phieukcb_ibfk_5` FOREIGN KEY (`MaTrangThai`) REFERENCES `trangthai` (`MaTT`),\par
+  ADD CONSTRAINT `phieukcb_ibfk_1` FOREIGN KEY (`MaBN`) REFERENCES `benhnhan` (`MaBN`),\par
+  ADD CONSTRAINT `phieukcb_ibfk_2` FOREIGN KEY (`MaBS`) REFERENCES `nhanvien` (`MaNV`),\par
+  ADD CONSTRAINT `phieukcb_ibfk_3` FOREIGN KEY (`KetQuaKham`) REFERENCES `loaibenh` (`MaLoaiBenh`),\par
+  ADD CONSTRAINT `phieukcb_ibfk_4` FOREIGN KEY (`MaBN`) REFERENCES `benhnhan` (`MaBN`);\par
+\par
+--\par
+-- Constraints for table `phieunhapkho`\par
+--\par
+ALTER TABLE `phieunhapkho`\par
+  ADD CONSTRAINT `phieunhapkho_ibfk_1` FOREIGN KEY (`MaKho`) REFERENCES `khothuoc` (`MaKho`),\par
+  ADD CONSTRAINT `phieunhapkho_ibfk_2` FOREIGN KEY (`MaThuoc`) REFERENCES `thuoc` (`MaThuoc`);\par
+\par
+--\par
+-- Constraints for table `phieuthanhtoan`\par
+--\par
+ALTER TABLE `phieuthanhtoan`\par
+  ADD CONSTRAINT `phieuthanhtoan_ibfk_1` FOREIGN KEY (`MaToaThuoc`) REFERENCES `toathuoc` (`MaToaThuoc`);\par
+\par
+--\par
+-- Constraints for table `phieuyeucau`\par
+--\par
+ALTER TABLE `phieuyeucau`\par
+  ADD CONSTRAINT `phieuyeucau_ibfk_2` FOREIGN KEY (`MaBS`) REFERENCES `nhanvien` (`MaNV`),\par
+  ADD CONSTRAINT `phieuyeucau_ibfk_1` FOREIGN KEY (`MaBN`) REFERENCES `benhnhan` (`MaBN`);\par
+\par
+--\par
+-- Constraints for table `phongkham`\par
+--\par
+ALTER TABLE `phongkham`\par
+  ADD CONSTRAINT `phongkham_ibfk_1` FOREIGN KEY (`MaKhoa`) REFERENCES `khoa` (`MaKhoa`);\par
+\par
+--\par
+-- Constraints for table `phongphatthuoc`\par
+--\par
+ALTER TABLE `phongphatthuoc`\par
+  ADD CONSTRAINT `phongphatthuoc_ibfk_1` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `loaiphongphatthuoc` (`MaLoaiPhong`);\par
+\par
+--\par
+-- Constraints for table `phongphatthuoc_benh`\par
+--\par
+ALTER TABLE `phongphatthuoc_benh`\par
+  ADD CONSTRAINT `phongphatthuoc_benh_ibfk_1` FOREIGN KEY (`MaPhong`) REFERENCES `phongphatthuoc` (`MaPhong`),\par
+  ADD CONSTRAINT `phongphatthuoc_benh_ibfk_2` FOREIGN KEY (`MaLoaiBenh`) REFERENCES `loaibenh` (`MaLoaiBenh`);\par
+\par
+--\par
+-- Constraints for table `taikhoan`\par
+--\par
+ALTER TABLE `taikhoan`\par
+  ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaQuyen`) REFERENCES `quyen` (`MaQuyen`);\par
+\par
+--\par
+-- Constraints for table `taikhoan_phongphatthuoc`\par
+--\par
+ALTER TABLE `taikhoan_phongphatthuoc`\par
+  ADD CONSTRAINT `taikhoan_phongphatthuoc_ibfk_1` FOREIGN KEY (`MaTK`) REFERENCES `taikhoan` (`MaTK`),\par
+  ADD CONSTRAINT `taikhoan_phongphatthuoc_ibfk_2` FOREIGN KEY (`MaPhong`) REFERENCES `phongphatthuoc` (`MaPhong`);\par
+\par
+--\par
+-- Constraints for table `thuoc`\par
+--\par
+ALTER TABLE `thuoc`\par
+  ADD CONSTRAINT `thuoc_ibfk_1` FOREIGN KEY (`MaCachSD`) REFERENCES `cachsd` (`MaCachSD`),\par
+  ADD CONSTRAINT `thuoc_ibfk_2` FOREIGN KEY (`MaLoaiThuoc`) REFERENCES `loaithuoc` (`MaLoaiThuoc`);\par
+\par
+--\par
+-- Constraints for table `toathuoc`\par
+--\par
+ALTER TABLE `toathuoc`\par
+  ADD CONSTRAINT `toathuoc_ibfk_1` FOREIGN KEY (`MaPhieuKCB`) REFERENCES `phieukcb` (`MaPhieuKCB`);\par
+}
+ 
