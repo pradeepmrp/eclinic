@@ -1,0 +1,172 @@
+﻿  /* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#003399;
+}
+
+#mast_container{
+	width:900px;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+}
+#masthead {
+	height:130px;
+	background-image:url('../Images/eclinic_logo.jpg');
+	background-position:left;
+	background-repeat:no-repeat;
+	margin-left:15px;
+	vertical-align:middle;
+	/*border:thin blue dashed;*/
+}
+
+.top_container, .bot_container{
+	overflow:auto;
+}
+
+.bot_container{
+	
+}
+#top_left_col {
+	width: 200px;
+	height:260px;
+	float: left;
+	
+}
+
+#links{
+	background-color:#319DBA;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+ul li{
+	color:white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:25px;
+}
+
+li > a:link{
+	color:white;
+	text-decoration:none;
+}
+
+li > a:hover{
+	font-size:13px;
+	font-weight:bold;
+	color:white;
+	cursor:hand;
+}
+
+li > a:visited{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+
+a:link{
+	color: #333333;
+	text-decoration:none;
+	font-weight:normal;
+}
+
+a:visited{
+	text-decoration:none;
+	color:#D66667;
+	font-weight:bold;
+}
+
+#top_page_content {
+	margin-left: 205px;
+	height:260px;
+	margin-right:5px;
+}
+
+#img1{
+	float:left;
+	margin-right:0px;
+}
+#bot_left_col {
+	width: 200px;
+	float: left;
+	max-height:100%;
+	
+}
+
+#categories{
+	background-color: #D66667;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+}
+
+#bot_page_content {
+	margin-left: 205px;
+	max-height:100%;
+	margin-right:5px;
+	margin-top:0px;
+	
+}
+
+#desc{
+	background-color: white;
+	padding:10px 10px 10px 10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-align:justify;
+	line-height:22px;
+	color:#1E6CB8;
+}
+
+hr{
+	height:10px;
+	background-color:#666666;
+}
+
+#redhr{
+	height:10px;
+	background-color:#CC0000;
+}
+
+#bluehr{
+	height:10px;
+	background-color:#003399;
+}
+
+#footer {
+	clear: both;
+	min-height:25px;
+}
+
+#footer_links{
+	background-color:white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+	padding-top:3px;
+}
+
+#credit{
+	text-align:right;
+	padding-right:5px;
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:10px; 
+	color: #333333;	
+}
+#login_form{
+background-color: #D66667;
+	padding-top:10px;
+	padding-bottom:10px;
+	}
+.input_text{
+width:100px;
+margin-top:10px;
+}
+.button{
+background:#999900;
+margin-top:10px;
+border:solid 1px #999900;
+}
