@@ -1,25 +1,5 @@
 ﻿ <?php
-         //   include 'db.inc';
-    /* if(isset($_REQUEST["btnDel"]))
-      {
-          $MaThuocs = $_REQUEST['chkMaThuocs'];
-      	foreach ($MaThuocs as $mathuoc)
-      	{
 
-          	$query = "Delete FROM chitiettoathuoc Where MaThuoc=".$mathuoc;
-
-          	$result = mysql_query($query, $link);
-
-      	}
-       }
-      else if(isset($_REQUEST['maThuoc']))
-      { */
-        //  $mt = $_REQUEST["MT"];
-        //  $mtt = $_REQUEST["MTT"];
-        //  $query = "Delete FROM chitiettoathuoc Where MaThuoc=$mt and MaToaThuoc=$mtt";
-        //  $result = mysql_query($query, $link);
-
-     // }
           include 'db.inc';
          //if(isset($_REQUEST["btnAdd"]))
           $mp = $_REQUEST["MP"];
