@@ -33,6 +33,158 @@ function InsertCachSuDung()
 
 	xmlhttp.send(null);
 }
+function InsertChuyenMon()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenCM").value;
+    var url = "xlThemDMChuyenMon.php?TenCM="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertKhoa()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenKhoa").value;
+    var url = "xlThemDMKhoa.php?TenKhoa="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertLoaiBenh()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenLB").value;
+    var url = "xlThemDMLoaiBenh.php?TenLB="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertLoaiNhanVien()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenLoaiNV").value;
+    var url = "xlThemDMLoaiNhanVien.php?TenLoaiNV="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertLoaiPhongPhatThuoc()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenLP").value;
+    var url = "xlThemDMLoaiPhongPhatThuoc.php?TenLP="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertLoaiThuoc()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenLT").value;
+    var url = "xlThemDMLoaiThuoc.php?TenLT="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertQuyen()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenQuyen").value;
+    var url = "xlThemDMQuyen.php?TenQuyen="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
+function InsertTrangThai()
+{
+
+  	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null)
+	{
+		alert ("Your browser does not support XML HTTP Request");
+		return;
+	}
+
+	xmlhttp.onreadystatechange = showDetailResult;
+	var ten = document.getElementById("txtTenTT").value;
+    var url = "xlThemDMTrangThai.php?TenTT="+ten;
+    url += "&t=" + Math.random();
+
+	xmlhttp.open("GET", url, true);
+
+	xmlhttp.send(null);
+}
 
 function UpdateCachSuDung()
 {
