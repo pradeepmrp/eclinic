@@ -3,14 +3,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Quản lý danh mục cách sử dụng thuốc</title>
+  <title>Quản lý danh mục chuyên môn</title>
   <script type="text/javascript" src="jsDanhMuc.js"></script>
 </head>
 <body>
 <div id="divDetailResult">
 <?php
     include 'db.inc';
-    $table = "CachSD";
+    $table = "ChuyenMon";
     $query = "SELECT * FROM $table" ;
     $result = mysql_query($query, $link);
 
@@ -20,36 +20,34 @@
     }
 	else
 	{
-      echo "<form action='' method='GET' name='frmXXX'>";
+      echo "<form action='' method='GET' name='frmCM'>";
 	  echo "<table border='1' align='center'>";
       echo "<tr>" ;
         echo "<th>Mã</th>" ;
-        echo "<th>Tên cách sử dụng</th>" ;
+        echo "<th>Tên chuyên môn</th>" ;
       echo "</tr>" ;
       while ($row = mysql_fetch_row($result))
 		{
-			$macsd = $row[0];
-			$tencsd= $row[1];
+			$macm = $row[0];
+			$tencm= $row[1];
 			echo "<tr align='center'>";
-    			echo "<td>$macsd</td>";
-    			echo "<td>$tencsd</td>";
+    			echo "<td>$macm</td>";
+    			echo "<td>$tencm</td>";
     			echo "<td>";
-    		    	echo "<input type='hidden' id='ma_CSD' value='$macsd' />";
-                    //echo "<input type='button' value='Xóa' id='btnDel' onclick='DeleteCachSuDung();' />";
-                    echo "<a href='xlXoaDMCachSuDung.php?MaCachSD=$macsd' >Xóa</a>";
+    		    	echo "<input type='hidden' id='ma_CM' value='$macm' />";
+                    echo "<a href='xlXoaDMChuyenMon.php?MaCM=$macm' >Xóa</a>";
               	echo "</td>";
               echo"<td>";
-                echo "<input type='hidden' id='ten_CSD' value='$tencsd' />";
-               // echo "<input type='button' value='Sửa' id='btnUpd' onclick='UpdateCachSuDung();' />";
-                echo "<a href='xlCapNhatDMCachSuDung.php?MaCachSD=$macsd&TenCachSD=$tencsd ' >Sửa</a>";
+                echo "<input type='hidden' id='ten_CM' value='$tencm' />";
+                echo "<a href='xlCapNhatDMChuyenMon.php?MaCM=$macm&TenCM=$tencm ' >Sửa</a>";
              echo"</td>";
            echo "</tr>";
 		}
          echo "<tr>";
      	    echo "<td></td>";
-    	    echo "<td><input type='text' id='txtTenCachSD' size='16' /></td>";
+    	    echo "<td><input type='text' id='txtTenCM' size='16' /></td>";
        		echo "<td colspan='2'>";
-            echo "<input type='button' value='Thêm mới' id='btnAdd' onclick='InsertCachSuDung();' />";
+            echo "<input type='button' value='Thêm mới' id='btnAdd' onclick='InsertChuyenMon();' />";
             echo "</td>";
 		echo "</tr>";
        echo "</table>";
