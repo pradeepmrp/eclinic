@@ -1,0 +1,214 @@
+﻿  /* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#0066FF;
+}
+
+#mast_container{
+	width:900px;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+}
+#top_banner{
+	height:130px;
+}
+#masthead {
+	height:130px;
+	background-image:url('../Images/eclinic_logo.jpg');
+	background-position:left;
+	background-repeat:no-repeat;
+	/*margin-left:15px;*/
+	width:180px;
+	float:left;
+	vertical-align:middle;
+	
+}
+#top_page_banner {
+	/*margin-left: 205px;*/
+	/*height:260px;*/
+	/*height:130px;
+	margin-right:5px;*/
+	height:130px;
+	width:720px;;
+	float:left;
+	vertical-align:middle;
+}
+.top_container, .bot_container{
+	float:left;
+}
+
+.bot_container{
+margin-bottom:0px;
+}
+#top_left_col {
+	width:900px;	
+	float: left;
+	
+}
+
+#links{
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#319DBA;
+	padding-top:5px;
+	padding-bottom:10px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:16px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+/*
+.links_block{
+	width:225px;
+	float:left;
+	text-align:center;
+}*/
+
+ul li{
+	color:white;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:25px;
+}
+
+li a:link{
+	text-decoration:none;
+	font-size:13px;
+}
+
+li a:hover{
+	font-size:13px;
+	font-weight:bold;
+	cursor:hand;
+}
+
+li a:visited{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+	
+}
+#links a{
+	padding:50px 50px 50px 50px;
+}
+#links a:link{
+	text-decoration:none;
+	color:white;	
+}
+
+#links a:hover,a:focus{
+	color:#CCCC33;
+	font-weight:bold;
+	cursor:hand;
+}
+#links a:visited{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+
+
+#bot_left_col {
+	width:200px;
+	float: left;
+	max-height:100%;
+	
+}
+
+#categories{
+	background-color: #D66667;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+}
+
+#bot_page_content {
+	margin-left: 205px;
+	max-height:100%;
+	margin-top:0px;
+	width:695px;
+}
+
+#desc{
+	background-color: white;
+	padding:0px 0px 0px 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-align:justify;
+	line-height:22px;
+	color:#1E6CB8;
+}
+#noidung{
+	background-color:#CCCCFF;
+	width:690px;
+}
+hr{
+	height:10px;
+	background-color:#666666;
+}
+
+#redhr{
+	height:10px;
+	background-color:#CC3333;
+}
+
+#bluehr{
+	height:10px;
+	background-color:#003399;
+}
+
+#footer {
+	clear: both;
+	min-height:25px;
+}
+
+#footer_links{
+	background-color:#319DBA;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	color:#FFFFFF;
+}
+
+#footer_links a{
+padding:10px 10px 10px 10px;
+}
+#footer_links a:link{
+	text-decoration:none;
+	color:white;
+}
+
+#footer_links a:hover,a:focus{
+	color:#CCCC33;
+	font-weight:bold;
+	cursor:hand;
+}
+#footer_links a:visited{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+#login_form{
+	background-color: #D66667;
+	padding-top:10px;
+	padding-bottom:10px;
+	}
+.input_text{
+width:100px;
+margin-top:10px;
+margin-left:5px;
+width:120px;
+}
+.button_login{
+margin-top:10px;
+border:solid 1px #666666;
+margin-left:105px;
+font-weight:bold;
+text-transform:uppercase;
+background-color:#808080;
+width:70px;
+cursor:hand;
+}
