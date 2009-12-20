@@ -20,6 +20,14 @@
 </head>
 <body>
 <form action="xlDMThuoc.php"  method="post">
+<?php
+	if($_REQUEST['act']=='insert' && $_REQUEST['rs']=='suc')
+	{
+		echo "<h3 align='center'>Thêm thành công</h3>";
+	}
+?>
+
+
 <table width="100%" border="1">
 	<tr>
 	<td colspan="2">

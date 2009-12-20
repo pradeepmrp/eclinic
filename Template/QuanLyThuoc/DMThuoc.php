@@ -20,7 +20,7 @@
 HienThiDuLieu();
 function HienThiDuLieu()
 {
-	$.get("xlDMThuoc.php?act=show",function(data){
+	$.get("xlDMThuoc.php?act=show&ran="+Math.random(),function(data){
 	$('#dvDanhSach').html(data);
 	});
 }
@@ -35,10 +35,10 @@ function XoaThuoc(id)
 		   url: "xlDMThuoc.php",
 		   data: "id="+id+"&act=delete",
 		   success: function(msg){
+		   	HienThiDuLieu();
 			 alert( "Xoa Thanh Cong" );
 		   }
 		 });
-		 HienThiDuLieu();
 	 }
 }
 </script>
