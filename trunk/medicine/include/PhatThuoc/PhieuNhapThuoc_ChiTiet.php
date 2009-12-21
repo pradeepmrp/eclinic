@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<script src="../Js/jquery.min.js" type="text/javascript">
+<script src="../../Js/jquery.min.js" type="text/javascript">
+</script>
+<script src="../../Js/eclinic.js" type="text/javascript">
 </script>
 </head>
 
@@ -42,6 +44,7 @@
 		var url="xlPhieuNhapThuoc.php?act=detail&maphieu="+maPhieu+"&ran"+Math.random();
 		$.get(url,function(data){
 			$("#dvDS").html(data);
+			calcHeight();
 		});
 	}
 </script>

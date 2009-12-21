@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<script type="text/javascript" src="../Js/epoch_classes.js">
+<script type="text/javascript" src="../../Js/epoch_classes.js">
 </script>
-<link rel="stylesheet" type="text/css" href="../Styles/epoch_styles.css">
+<link rel="stylesheet" type="text/css" href="../../Styles/epoch_styles.css">
 <script type="text/javascript">
 	var dp_cal,expire;
 	window.onload = function () {
@@ -14,7 +14,7 @@
 	
 };
 </script>
-<script src="../Js/jquery.min.js" type="text/javascript">
+<script src="../../Js/jquery.min.js" type="text/javascript">
 </script>
 
 </head>

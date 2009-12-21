@@ -25,7 +25,7 @@
 	}
 	function ThemPhieuNhap()
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		if($_REQUEST['maphieu']==0) // insert
 		{
 			$ngayNhan=$_REQUEST['ngayNhan'];
@@ -45,7 +45,7 @@
 	}
 	function ThemChiTietPhieuNhap($maPhieuNhap)
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$maKho=1; // chinh la ma phong cua taikhoan_phongphatthuoc
 		$maThuoc=$_REQUEST['maThuoc'];
 		$soLuong=$_REQUEST['soLuong'];
@@ -56,7 +56,7 @@
 	}
 	function CapNhatKhoThuoc()
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$maPhong=1; // chinh la ma phong cua taikhoan_phongphatthuoc
 		$maThuoc=$_REQUEST['maThuoc'];
 		$soLuong=$_REQUEST['soLuong'];
@@ -78,7 +78,7 @@
 	}
 	function HienThiDanhSach($maPhieuNhap)
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$query="select ct.MaCTPhieuNhap,th.TenThuoc,ct.SoLuongNhap  from ChiTietPhieuNhap ct,Thuoc th ".
 			" where ct.MaThuoc=th.MaThuoc and ct.MaPhieuNhap=$maPhieuNhap";
 		$result=mysql_query($query,$link);
@@ -99,7 +99,7 @@
 	}
 	function XemChiTiet($maPhieuNhap)
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$query="select ct.MaCTPhieuNhap,th.TenThuoc,ct.SoLuongNhap  from ChiTietPhieuNhap ct,Thuoc th ".
 			" where ct.MaThuoc=th.MaThuoc and ct.MaPhieuNhap=$maPhieuNhap";
 		$result=mysql_query($query,$link);
@@ -119,7 +119,7 @@
 	}
 	function Xoa($maCTPhieuNhap)
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$query="select MaKho,MaThuoc,SoLuongNhap from ChiTietPhieuNhap where MaCTPhieuNhap=$maCTPhieuNhap";
 		$result=mysql_query($query);
 		$row=mysql_fetch_row($result);
@@ -133,7 +133,7 @@
 	}
 	function HienThiPhieuNhap($maPhieu)
 	{
-		include "../db.inc";
+		include "../../db.inc";
 		$query="select * from PhieuNhapKho where MaPhieuNhap=$maPhieu";
 		$result=mysql_query($query,$link);
 		$row=mysql_fetch_array($result,MYSQL_BOTH);

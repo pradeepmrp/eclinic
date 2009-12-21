@@ -38,7 +38,7 @@ else
 			?>
 			<ul>
 				<li><a href="">Thanh toán cho bệnh nhân</a></li>
-				<li><a href="">Tra cứu doanh thu phòng khám</a></li>
+				<li><a href="include/PhatThuoc/DoanhThu.php" target="noidung">Tra cứu doanh thu phòng khám</a></li>
 				<li><a href="">Thống kê so sánh</a></li>
 			</ul>
 			<?php
@@ -47,9 +47,9 @@ else
 			?>
 			<ul>
 				<li><a href="">Phát thuốc cho bệnh nhân</a></li>
-				<li><a href="">Tra cứu tình hình thuốc trong kho</a></li>
-				<li><a href="">Nhập thuốc m?i</a></li>
-				<li><a href="">Cập nhật thuốc</a></li>
+				<li><a href="include/PhatThuoc/KhoThuoc.php" target="noidung">Tra cứu tình hình thuốc trong kho</a></li>
+				<li><a href="include/PhatThuoc/PhieuNhapThuoc.php" target="noidung">Nhập thuốc mới</a></li>
+				<li><a href="include/PhatThuoc/DMThuoc.php" target="noidung">Danh mục thuốc</a></li>
 			</ul>
 			<?php
 			break;
