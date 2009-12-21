@@ -50,6 +50,7 @@ else
 				<li><a href="include/PhatThuoc/KhoThuoc.php" target="noidung">Tra cứu tình hình thuốc trong kho</a></li>
 				<li><a href="include/PhatThuoc/PhieuNhapThuoc.php" target="noidung">Nhập thuốc mới</a></li>
 				<li><a href="include/PhatThuoc/DMThuoc.php" target="noidung">Danh mục thuốc</a></li>
+								<li><a href="include/PhatThuoc/DoanhThu.php" target="noidung">Tra cứu doanh thu phòng khám</a></li>
 			</ul>
 			<?php
 			break;

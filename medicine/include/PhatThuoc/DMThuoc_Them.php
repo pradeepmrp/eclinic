@@ -14,7 +14,7 @@
 	
 };
 </script>
-<script src="../../../Js/jquery.min.js" type="text/javascript">
+<script src="../../Js/jquery.min.js" type="text/javascript">
 </script>
 
 </head>
