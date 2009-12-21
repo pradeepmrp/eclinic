@@ -3,7 +3,7 @@ include "../utility.php";
 //-----------------
 function Them()
 {
-	include "../db.inc";
+	include "../../db.inc";
 	$loaiThuoc=$_POST['cbLoaiThuoc'];
 	$cachDung=$_REQUEST['cbCachDung'];
 	$ngaySX=ChangeFormatDate($_REQUEST['txtNgaySX']);
@@ -17,7 +17,7 @@ function Them()
 }
 function HienThiDanhSach()
 {
-	include "../db.inc";
+	include "../../db.inc";
 	$query="SELECT `MaThuoc` , `TenThuoc` , NgaySX , `NgayHetHan` , `Gia` , lt.TenLoaiThuoc, sd.TenCachSD ".
 	"FROM thuoc th, cachsd sd, loaithuoc lt ".
 	"WHERE th.`MaCachSD` = sd.`MaCachSD`  ".
@@ -52,13 +52,13 @@ function HienThiDanhSach()
 }
 function Xoa($maThuoc)
 {
-	include "../db.inc";
+	include "../../db.inc";
 	$query="delete from Thuoc where MaThuoc=".$maThuoc;
 	$result=mysql_query($query);
 }
 function HienThiThuoc($maThuoc)
 {
-	include "../db.inc";
+	include "../../db.inc";
 	$query="select * from Thuoc where MaThuoc=".$maThuoc;
 	$result=mysql_query($query,$link);
 	$row = mysql_fetch_array($result, MYSQL_BOTH);
@@ -67,7 +67,7 @@ function HienThiThuoc($maThuoc)
 }
 function CapNhat($maThuoc)
 {
-	include "../db.inc";
+	include "../../db.inc";
 	$loaiThuoc=$_POST['cbLoaiThuoc'];
 	$cachDung=$_REQUEST['cbCachDung'];
 	$ngaySX=ChangeFormatDate($_REQUEST['txtNgaySX']);

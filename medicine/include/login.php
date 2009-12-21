@@ -1,5 +1,5 @@
 <?php 
-include 'db.inc';
+include '../db.inc';
 $u=$_REQUEST['user'];
 $p=$_REQUEST['pass'];
 echo $u."&nbsp;".$p;

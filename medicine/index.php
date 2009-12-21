@@ -12,7 +12,7 @@ session_start();
 function calcHeight()
 {    
     var dodai_trang = document.getElementById('noidung').contentWindow.document.body.scrollHeight;
-    document.getElementById('noidung').height=dodai_trang;
+    document.getElementById('noidung').height=(dodai_trang+100);
 }
 </script>
 </head> 

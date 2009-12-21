@@ -12,7 +12,7 @@
 		echo "<td>Loại Thuốc</td>";
 		echo "<td>Số Lượng</td>";
 		echo "</tr>";
-		include "../db.inc";
+		include "../../db.inc";
 		$maPhong=1;//--------------------
 		$query="select th.TenThuoc,lt.TenLoaiThuoc,kh.SoLuong from Thuoc th,KhoThuoc kh,LoaiThuoc lt ".
 			" where th.MaThuoc=kh.MaThuoc and lt.MaLoaiThuoc=th.MaLoaiThuoc and kh.MaPhong=$maPhong".

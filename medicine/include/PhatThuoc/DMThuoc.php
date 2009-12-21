@@ -3,8 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<script src="../Js/jquery.min.js" type="text/javascript">
+<script src="../../Js/jquery.min.js" type="text/javascript">
 </script>
+<script src="../../Js/eclinic.js" type="text/javascript">
+</script>
+
 </head>
 <body>
 <table>
@@ -21,7 +24,8 @@ HienThiDuLieu();
 function HienThiDuLieu()
 {
 	$.get("xlDMThuoc.php?act=show&ran="+Math.random(),function(data){
-	$('#dvDanhSach').html(data);
+		$('#dvDanhSach').html(data);
+		calcHeight();
 	});
 }
 function XoaThuoc(id)

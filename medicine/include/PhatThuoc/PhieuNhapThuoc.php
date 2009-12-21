@@ -25,7 +25,7 @@
 		</td>
 	</tr>
 	<?php
-		include "../db.inc";
+		include "../../db.inc";
 		$maKho=1;// sua lai khi lam login
 		$query="select DISTINCT  pn.MaPhieuNhap,pn.NgayNhap from PhieuNhapKho pn,ChiTietPhieuNhap ct ".
 			" where pn.MaPhieuNhap=ct.MaPhieuNhap and ct.MaKho=$maKho";

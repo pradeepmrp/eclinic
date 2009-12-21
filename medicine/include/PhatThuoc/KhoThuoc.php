@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<script src="../Js/jquery.min.js" type="text/javascript">
+<script src="../../Js/jquery.min.js" type="text/javascript">
+</script>
+<script src="../../Js/eclinic.js" type="text/javascript">
 </script>
 </head>
 
@@ -19,7 +21,7 @@
 		<td>
 			<select name="cbLoaiThuoc" id="cbLoaiThuoc">
 				<?php
-					include "../db.inc";
+					include "../../db.inc";
 					$query="select * from loaithuoc";
 					$result=mysql_query($query,$link);
 					if($result)
@@ -47,8 +49,10 @@
 		var url="xlKhoThuoc.php?tenThuoc="+tenThuoc+"&loaiThuoc="+loaiThuoc+"&ran="+Math.random();
 		$.get(url,function(data){
 			$("#dvDS").html(data);
+			calcHeight();
 		});
 	}
+	
 </script>
 </body>
 </html>
